@@ -270,6 +270,10 @@ public class HashTableChained implements Dictionary {
     return result;
   }
 
+  public int collision(){
+    return sizeDup;
+  }
+
   public static void main(String[] args){
   //  testIsPrime();
     System.out.println("testing------------------------");

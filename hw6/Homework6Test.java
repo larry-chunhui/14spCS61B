@@ -60,6 +60,18 @@ public class Homework6Test {
     // that counts the number of collisions--or better yet, also prints
     // a histograph of the number of entries in each bucket.  Call this method
     // from here.
-  }
 
+    System.out.println("number of buckets is "+table.length+",number of entries is "+table.size);
+    System.out.println(table.toString());
+    System.out.println("Expect collision:"+table.collision());
+    System.out.println("Real collision:"+table.sizeDup);
+
+    numBoards = 200;
+    table = new HashTableChained(numBoards);
+    initTable(table, numBoards);
+    System.out.println("number of buckets is "+table.length+",number of entries is "+table.size);
+    System.out.println(table.toString());
+    System.out.println("Expected collision:"+table.collision());
+    System.out.println("Real collision:"+table.sizeDup);
+  }
 }

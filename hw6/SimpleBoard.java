@@ -66,7 +66,18 @@ public class SimpleBoard {
     // Replace the following line with your solution.  Be sure to return false
     //   (rather than throwing a ClassCastException) if "board" is not
     //   a SimpleBoard.
-    return false;
+    if(board instanceof SimpleBoard){
+      for(int i=0;i<DIMENSION;i++){
+        for (int j=0; j<DIMENSION; j++){
+          if(grid[i][j]!=((SimpleBoard)board).grid[i][j]){
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+    else return false;
+
   }
 
   /**
@@ -76,7 +87,13 @@ public class SimpleBoard {
 
   public int hashCode() {
     // Replace the following line with your solution.
-    return 99;
+    int code=0;
+    for(int i=0;i<DIMENSION;i++){
+      for (int j=0; j<DIMENSION; j++){
+        code=code*3+grid[i][j];
+      }
+    }
+    return code;
   }
 
 }
