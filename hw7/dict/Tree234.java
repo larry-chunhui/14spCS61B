@@ -160,6 +160,9 @@ public class Tree234 extends IntDictionary {
             System.out.println("key==80");
             System.out.println(node.key1+" "+node.key2+" "+node.key3);
             System.out.println(node.parent.key1+" "+node.parent.key2+" "+node.parent.key3);
+            System.out.println(node==node.parent.child1);
+            System.out.println(node.parent.child1.key1+" "+node.key1);
+            System.out.println(node.parent.parent.child1.child2==node);
           }
 
           if (node.parent.key1 < node.key2) {
@@ -189,7 +192,7 @@ public class Tree234 extends IntDictionary {
             node.parent.child1 = left;
             node.parent.child2 = node;
 
-            left.parent = node.parent;
+            //left.parent = node.parent;
 
             //node=node.parent;
           }
@@ -236,14 +239,19 @@ public class Tree234 extends IntDictionary {
           left.child1=node.child1;
           left.child2=node.child2;
 
+          left.child1.parent=left;
+          left.child2.parent=left;
+
           node.child1=node.child3;
           node.child2=node.child4;
+          node.child1.parent=node;
+          node.child2.parent=node;
           node.child3=null;
           node.child4=null;
         }
         node=node.parent;
 
-        if(key==80){return;}
+      //  if(key==80){return;}
 
 
       }
