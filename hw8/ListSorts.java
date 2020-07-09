@@ -274,9 +274,6 @@ public class ListSorts {
     mergeSort(q);
     System.out.println(q.toString());
 
-
-
-
     q = makeRandom(10);
     System.out.println(q.toString());
     quickSort(q);

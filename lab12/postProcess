@@ -1,0 +1,22 @@
+    gnuplot<<PLT_CF
+    set terminal pngcairo font "helvetica,20" size 1000, 1000
+ #   set xrange [0:100]
+ #   set yrange [0:100]
+    set grid
+    set key bottom right
+    set xlabel "x"
+    set ylabel "C_f" rotate by 0
+    set output "graphNameCf"
+
+
+
+    set lmargin 10
+    set rmargin 1.5
+    set bmargin 3.2
+
+     plot "select.dat" with linesp 1, "merge.dat" with linesp 2, \
+           "insert.dat" with linesp 3, "quick.dat" with linesp 4
+
+PLT_CF
+
+
